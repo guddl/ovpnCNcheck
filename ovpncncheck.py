@@ -70,7 +70,7 @@ def main():
         # If so, parse out the common name substring in
         # the X509 subject string.
 
-        found = re.compile(r"/CN=(?P<cn>[^/]+)").search(x509)
+        found = re.compile(r" CN=(?P<cn>[^\,]+)").search(x509)
         if found:
             # Accept the connection if the X509 common name
             # string matches a regex
